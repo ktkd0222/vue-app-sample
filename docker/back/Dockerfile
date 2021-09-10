@@ -7,4 +7,7 @@ ENV TZ Asia/Tokyo
 COPY ./docker/back/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
+COPY ./docker/back/docker-entrypoint.sh docker-entrypoint.sh
+RUN chmod +x docker-entrypoint.sh
+
 WORKDIR /app
